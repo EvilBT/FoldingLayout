@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:foldingLayout="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="xyz.zpayh.sample.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <xyz.zpayh.foldinglayout.FoldingLayout
+        android:id="@+id/foldLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:animationDuration="1000"
+        app:folded="false"
+        android:layout_marginTop="8dp">
+        <include layout="@layout/item_title"/>
+        <include layout="@layout/content_layout"
+                 android:id="@+id/content_view"
+                 tools:visibility="gone"/>
+        <!-- 下面的FrameLayout并没有被添加到FoldingLayout中去-->
+        <FrameLayout
+            android:id="@+id/content_view1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/bt_toast1"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="吐司"/>
+
+                <Button
+                    android:id="@+id/bt_fold1"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="折叠"/>
+            </LinearLayout>
+        </FrameLayout>
+    </xyz.zpayh.foldinglayout.FoldingLayout>
+
+</android.support.constraint.ConstraintLayout>

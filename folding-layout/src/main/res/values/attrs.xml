@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FoldingLayout">
+        <attr name="responsibility">
+            <enum name="folded" value="0"/>
+            <enum name="unfolded" value="1"/>
+        </attr>
+        <attr name="folded" format="boolean"/>
+        <attr name="backSideColor" format="color"/>
+        <attr name="animationDuration" format="integer"/>
+        <attr name="additionalFlipsCount" format="integer"/>
+        <attr name="cameraHeight" format="integer"/>
+    </declare-styleable>
+</resources>
